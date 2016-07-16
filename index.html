@@ -1,0 +1,85 @@
+<head>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<h1>dorothy sun</h1>
+	<div class="headline">
+		<sub>on tour 2016</sub>
+	</div>
+
+	<table>
+		<td class="shitty-space">
+			<ol>
+				<li></li>
+			</ol>	
+		</td>
+		<td class="about-me">
+			<h2>about me</h2>
+			<p>
+				i'm a singer songwriter from atlanta, ga, USA, and i sing about ghosts and flowers (and how they're all the same)
+			</p>
+		</td>
+		<td>
+			<div class="tour-dates">
+				<h2>tour dates</h2>
+				<ul>
+					<li>coming soon</li>
+				</ul>
+			</div>
+		</td>
+	</table>
+
+	<script>
+		var canvas = document.getElementById("canvas");
+		canvas.width = document.documentElement.clientWidth;
+		canvas.height = document.documentElement.clientHeight;
+		canvas.style.width=canvas.width;
+		canvas.style.height=canvas.height;
+		var ctx = canvas.getContext("2d");
+
+		var spawnRate = 1500;
+		var spawnRateOfDescent = 0.40;
+		var lastSpawn = -1;
+		var stars = [];
+		var startTime = Date.now();
+
+		animate();
+
+
+		function spawnRandomObject() {
+		    var star = {
+		        x: Math.random() * (canvas.width - 30) + 15,
+		        y: 0,
+		    }
+
+		    stars.push(star);
+		}
+
+
+
+		function animate() {
+
+		    var time = Date.now();
+
+		    if (time > (lastSpawn + spawnRate)) {
+		        lastSpawn = time;
+		        spawnRandomObject();
+		    }
+
+		    requestAnimationFrame(animate);
+
+		    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+		    for (var i = 0; i < stars.length; i++) {
+		        var star = stars[i];
+		        star.y += spawnRateOfDescent;
+		        ctx.globalAlpha=0.1;
+		        ctx.font="15px Georgia";
+		        ctx.fillStyle="#111111";
+				ctx.fillText(String.fromCharCode(10047),star.x,star.y);
+		    }
+
+		}
+	</script>
+</body>	
