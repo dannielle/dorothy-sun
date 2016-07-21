@@ -25,6 +25,11 @@ sub {
 	margin: 20px;
 }
 
+table {
+	margin-left: 5%;
+
+}
+
 .shitty-space {
 	margin: 5% 1%;
 }
