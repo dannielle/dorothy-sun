@@ -43,6 +43,44 @@ td {
 	padding: 20px;
 }
 
-.about-me, .tour-dates{
+.about-me, .content{
 	box-shadow: 5px 5px 0 0 white;
+}
+
+.content {
+}
+
+.nav {
+	border-collapse: collapse;
+	position: absolute;
+	display: inline;
+	float: right;
+	right: 200px;
+	bottom: 50%;
+	border: 2px dotted white;
+}
+
+.nav tr {
+	border-bottom: 2px solid white;
+}
+
+.nav tr:last-of-type{
+	border-bottom: 0;
+}
+
+.nav td {
+	padding: 1em;
+}
+
+.nav a {
+	font-style: oblique;
+	font-weight: bold;
+}
+
+.clear {
+    clear: both;
+}
+
+.shit-media-row td {
+	padding-top: 0;
 }
