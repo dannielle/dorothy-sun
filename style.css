@@ -56,7 +56,7 @@ td {
 	display: inline;
 	float: right;
 	right: 200px;
-	bottom: 50%;
+	top: 20%;
 	border: 2px dotted white;
 }
 

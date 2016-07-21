@@ -2,7 +2,6 @@
 	<link href="style.css" rel="stylesheet">
 </head>
 <body>
-	<canvas id="canvas"></canvas>
 	<h1>dorothy sun</h1>
 	<div class="headline">
 		<sub>on tour 2016</sub>
@@ -47,64 +46,11 @@
 		</td>
 		<td>
 		</td>
-		<td class="shirotan">
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/GQz1xn5vGpM" frameborder="0" allowfullscreen></iframe>
+		<td class="video">
+			<blockquote class="twitter-video" data-lang="en"><p lang="ja" dir="ltr">オタマトーンとバイオリンでクロノクロスより時の傷痕をアレンジして撮ってみました。オタマとバイオリン以外は打ち込みです <a href="https://t.co/F9c0IPzMEq">pic.twitter.com/F9c0IPzMEq</a></p>&mdash; h i y a m a (@hvmevln) <a href="https://twitter.com/hvmevln/status/754278578045366272">July 16, 2016</a></blockquote>
+			<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>		
 		</td>
 	</tr>
 	</table>
 
-
-
-	<script>
-		var canvas = document.getElementById("canvas");
-		canvas.width = document.documentElement.clientWidth;
-		canvas.height = document.documentElement.clientHeight;
-		canvas.style.width=canvas.width;
-		canvas.style.height=canvas.height;
-		var ctx = canvas.getContext("2d");
-
-		var spawnRate = 1500;
-		var spawnRateOfDescent = 0.40;
-		var lastSpawn = -1;
-		var stars = [];
-		var startTime = Date.now();
-
-		animate();
-
-
-		function spawnRandomObject() {
-		    var star = {
-		        x: Math.random() * (canvas.width - 30) + 15,
-		        y: 0,
-		    }
-
-		    stars.push(star);
-		}
-
-
-
-		function animate() {
-
-		    var time = Date.now();
-
-		    if (time > (lastSpawn + spawnRate)) {
-		        lastSpawn = time;
-		        spawnRandomObject();
-		    }
-
-		    requestAnimationFrame(animate);
-
-		    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-		    for (var i = 0; i < stars.length; i++) {
-		        var star = stars[i];
-		        star.y += spawnRateOfDescent;
-		        ctx.globalAlpha=0.1;
-		        ctx.font="15px Georgia";
-		        ctx.fillStyle="#111111";
-				ctx.fillText(String.fromCharCode(10047),star.x,star.y);
-		    }
-
-		}
-	</script>
 </body>	
